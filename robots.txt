@@ -1,0 +1,9 @@
+# Mira Temizlik — Gaziantep Merdiven Temizliği
+# robots.txt
+
+User-agent: *
+Allow: /
+
+# Arama motorlarına açık; özel/yönetim dizini yok.
+
+Sitemap: https://www.gaziantepmerdiventemizligi.com/sitemap.xml

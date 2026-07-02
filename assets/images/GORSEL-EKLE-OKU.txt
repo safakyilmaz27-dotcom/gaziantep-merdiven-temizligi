@@ -1,0 +1,38 @@
+======================================================================
+  GÖRSELLERİ BURAYA EKLEYİN — Mira Temizlik
+======================================================================
+
+Site, görseller olmadan da düzgün çalışır (yeşil degrade zeminler görünür).
+Ancak Google sıralaması ve dönüşüm için GERÇEK fotoğraflar şart.
+Aşağıdaki dosya adlarını birebir kullanın; site otomatik tanır.
+
+ÖNERİLEN FORMAT: .webp (hızlı) — yoksa .jpg de olur (dosya adını HTML'de güncelleyin).
+
+--- ZORUNLU / ÖNEMLİ ---
+hero-merdiven.webp     → Ana sayfa hero görseli (tertemiz apartman merdiveni / ekip)
+                          Önerilen boyut: 600 x 660 px
+
+og-kapak.jpg           → Sosyal medya / Google paylaşım görseli (1200 x 630 px)
+                          WhatsApp, Facebook, Google'da link önizlemesinde çıkar.
+
+--- ÖNCESİ / SONRASI (galeri) ---
+oncesi-1.webp  /  sonrasi-1.webp   → 1. karşılaştırma (merdiven)
+oncesi-2.webp  /  sonrasi-2.webp   → 2. karşılaştırma (giriş/hol)
+                          Her biri yaklaşık 800 x 550 px, aynı açıdan çekilmiş olmalı.
+
+--- BLOG GÖRSELLERİ ---
+blog-ipuclari.webp        → "10 İpucu" yazısı kapağı
+blog-firma-secimi.webp    → "Firma Seçimi" yazısı kapağı
+blog-siklik.webp          → "Sıklık Rehberi" yazısı kapağı
+                          Her biri 640 x 360 px (16:9).
+
+======================================================================
+  GÖRSEL OPTİMİZASYONU (Lighthouse 95+ için)
+======================================================================
+1. Fotoğrafları çektikten sonra WebP'ye çevirin:  https://squoosh.app
+2. Hero görseli 150 KB altında, diğerleri 80 KB altında olsun.
+3. Telefon fotoğrafları yeterli; profesyonel çekim şart değil ama
+   iyi ışık ve düz açı büyük fark yaratır.
+4. Her görselin gerçek içeriği alt text ile uyumlu olmalı
+   (HTML'deki alt="..." açıklamaları zaten SEO uyumlu yazıldı).
+======================================================================
