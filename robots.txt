@@ -6,4 +6,4 @@ Allow: /
 
 # Arama motorlarına açık; özel/yönetim dizini yok.
 
-Sitemap: https://www.gaziantepmerdiventemizligi.com/sitemap.xml
+Sitemap: https://www.gaziantepapartmanvemerdiventemizligi.com/sitemap.xml
