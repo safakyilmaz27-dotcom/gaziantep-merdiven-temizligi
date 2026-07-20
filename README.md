@@ -70,7 +70,7 @@ Kod tarafı hazır; sıralama için asıl işi bu adımlar yapar:
 
 ### 1. Alan adı & yayına alma
 - `gaziantepapartmanvemerdiventemizligi.com` alan adını alın ve SSL (https) aktif edin.
-- Kod içindeki tüm `https://www.gaziantepapartmanvemerdiventemizligi.com/` adresleri hazır;
+- Kod içindeki tüm `https://gaziantepapartmanvemerdiventemizligi.com/` adresleri hazır;
   farklı alan adı kullanacaksanız **tüm dosyalarda** bu adresi değiştirin (canonical,
   Open Graph ve sitemap için önemli).
 
@@ -84,7 +84,7 @@ Yerel aramada 1. sıranın anahtarı budur, siteden bile önemli:
 
 ### 3. Google Search Console
 - https://search.google.com/search-console adresine sitenizi ekleyin.
-- `sitemap.xml` dosyasını gönderin (Sitemaps > `https://www.gaziantepapartmanvemerdiventemizligi.com/sitemap.xml`).
+- `sitemap.xml` dosyasını gönderin (Sitemaps > `https://gaziantepapartmanvemerdiventemizligi.com/sitemap.xml`).
 - "URL İnceleme" ile ana sayfayı dizine ekletin.
 
 ### 4. Google Maps embed'i gerçek konuma çevirin
