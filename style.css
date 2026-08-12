@@ -260,6 +260,7 @@ p { max-width: 62ch; }
 .card--feature h3 { color: #fff; }
 .card--feature p { color: #A9C6B7; }
 .card--feature .card-ico { background: rgba(140,198,63,0.16); color: var(--leaf); }
+.card--feature .card-link { color: var(--leaf); }
 
 /* ==========================================================================
    Neden Biz
