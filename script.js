@@ -7,6 +7,10 @@
 
   var WHATSAPP = "905320630389"; // Uluslararası format (0'sız, +90 -> 90)
 
+  /* ---------- 0) Reveal animasyonunu etkinlestir ----------
+     Sinif yalnizca JS calisiyorsa eklenir; aksi halde icerik bastan gorunur. */
+  document.documentElement.classList.add("js-reveal");
+
   /* ---------- 1) Sticky header gölgesi ---------- */
   var header = document.querySelector(".site-header");
   var onScroll = function () {
@@ -59,6 +63,12 @@
   } else {
     reveals.forEach(function (el) { el.classList.add("in"); });
   }
+
+  /* Guvenlik agi: IntersectionObserver tetiklenmezse (crawler render, kisa
+     viewport vb.) 2 sn sonra tum bloklari gorunur yap. */
+  window.setTimeout(function () {
+    reveals.forEach(function (el) { el.classList.add("in"); });
+  }, 2000);
 
   /* ---------- 5) Yorum carousel okları ---------- */
   var track = document.getElementById("reviews");
