@@ -7,6 +7,27 @@
 
   var WHATSAPP = "905320630389"; // Uluslararası format (0'sız, +90 -> 90)
 
+  /* ---------- Dönüşüm takibi (Google Ads / GA4) ----------
+     Her gerçek iletişim aksiyonunda (form gönderimi, telefon, WhatsApp)
+     mevcut Ads dönüşümünü ("Fiyat teklifi isteyin") tetikler.
+     gtag yoksa veya hata olursa sessizce atlar; sayfayı hiç etkilemez. */
+  function trackLead(method) {
+    if (typeof window.gtag !== "function") return;
+    try {
+      // Google Ads'e bağlı GA4 anahtar olayı (ctId 7832520877)
+      window.gtag("event", "ads_conversion_Fiyat_teklifi_isteyin_1", {
+        value: 1,
+        currency: "TRY"
+      });
+      // Standart GA4 lead olayı (raporlama + ileride içe aktarma için)
+      window.gtag("event", "generate_lead", {
+        value: 1,
+        currency: "TRY",
+        lead_method: method || "unknown"
+      });
+    } catch (e) { /* yut */ }
+  }
+
   /* ---------- 0) Reveal animasyonunu etkinlestir ----------
      Sinif yalnizca JS calisiyorsa eklenir; aksi halde icerik bastan gorunur. */
   document.documentElement.classList.add("js-reveal");
@@ -145,10 +166,31 @@
       if (adres) lines.push("📍 Adres: " + adres);
       if (not) lines.push("📝 Not: " + not);
 
+      // Dönüşümü kaydet (WhatsApp penceresi açılmadan önce)
+      trackLead("form");
+
       var url = "https://wa.me/" + WHATSAPP + "?text=" + encodeURIComponent(lines.join("\n"));
       window.open(url, "_blank", "noopener");
     });
   }
+
+  /* ---------- 7b) Telefon & WhatsApp tıklamaları -> dönüşüm ----------
+     Sayfadaki tüm tel: ve WhatsApp bağlantıları için tek bir delege dinleyici.
+     Capture aşamasında çalışır; yönlendirme olmadan önce olayı gönderir. */
+  document.addEventListener("click", function (e) {
+    var a = e.target.closest ? e.target.closest("a[href]") : null;
+    if (!a) return;
+    var href = a.getAttribute("href") || "";
+    if (href.indexOf("tel:") === 0) {
+      trackLead("phone");
+    } else if (
+      href.indexOf("wa.me") !== -1 ||
+      href.indexOf("api.whatsapp") !== -1 ||
+      href.indexOf("whatsapp.com") !== -1
+    ) {
+      trackLead("whatsapp");
+    }
+  }, true);
 
   /* ---------- 8) Yıl güncelleme (footer) ---------- */
   var yearEls = document.querySelectorAll("[data-year]");
